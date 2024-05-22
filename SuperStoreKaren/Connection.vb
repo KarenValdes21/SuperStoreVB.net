@@ -134,6 +134,36 @@ Public Class Connection
     ' Call Disconect()
     'End Try
     ' End Sub '
+    Public Function ObtenerRegiones() As DataTable
+        Dim dtRegion As New DataTable
+        Try
+            Call Connect()
+            Dim cmd = New SqlCommand("SELECT Id, Region FROM Region", cnx)
+            Dim adapter As New SqlDataAdapter(cmd)
+            adapter.Fill(dtRegion)
+        Catch ex As Exception
+            MsgBox("Error al obtener regiones: " & ex.Message)
+        Finally
+            Call Disconect()
+        End Try
+        Return dtRegion
+    End Function
+
+    Public Function ObtenerSegmentos() As DataTable
+        Dim dtSegmento As New DataTable
+        Try
+            Call Connect()
+            Dim cmd = New SqlCommand("SELECT Id, Segmento FROM Segmento", cnx)
+            Dim adapter As New SqlDataAdapter(cmd)
+            adapter.Fill(dtSegmento)
+        Catch ex As Exception
+            MsgBox("Error al obtener segmentos: " & ex.Message)
+        Finally
+            Call Disconect()
+        End Try
+        Return dtSegmento
+    End Function
+
     Public Shared Sub AgregarCliente(ClienteID As String, UsuarioCrea As Integer, IdRegion As String, IdSegmento As String)
         Try
             Call Connect()
@@ -179,6 +209,27 @@ Public Class Connection
             Call Disconect()
         End Try
     End Sub
+    Public Shared Sub EditarCliente(ClienteID As String, idRegion As Integer, idSegmento As Integer, UsuarioModifica As Integer, FechaModifica As Date)
+        Try
+            Call Connect()
+            Dim cmd As New SqlCommand("SP_EditarCliente", cnx)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@ClienteID", ClienteID)
+            cmd.Parameters.AddWithValue("@idRegion", idRegion)
+            cmd.Parameters.AddWithValue("@idSegmento", idSegmento)
+            cmd.Parameters.AddWithValue("@NuevoIdUsuarioModifica", UsuarioModifica)
+            cmd.Parameters.AddWithValue("@fechaModifica", FechaModifica)
+            cmd.ExecuteNonQuery()
+
+            MsgBox("Producto editado con éxito")
+        Catch ex As Exception
+            MsgBox("Error al editar el registro " & ex.Message)
+        Finally
+            Call Disconect()
+        End Try
+    End Sub
+
     Public Shared Sub EditarPedido(PedidoID As String, Precio As Decimal, Cantidad As Integer, Descuento As Decimal, Ganancia As Decimal, OrdenFecha As DateTime, EnvioFecha As DateTime, ModoEnvio As String, idUsuarioModifica As Integer)
         Try
             Call Connect()
@@ -217,6 +268,23 @@ Public Class Connection
             MsgBox("Registro eliminado con éxito")
         Catch ex As Exception
             MsgBox("Error al eliminar el registro " & ex.Message)
+        Finally
+            Call Disconect()
+        End Try
+    End Sub
+
+    Public Shared Sub EliminarCliente(ClienteID As String)
+        Try
+            Call Connect()
+            Dim cmd As New SqlCommand("SP_EliminarCliente", cnx)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@ClienteID", SqlDbType.VarChar).Value = ClienteID.ToString()
+
+            cmd.ExecuteNonQuery()
+
+            MsgBox("Cliente desactivado con éxito")
+        Catch ex As Exception
+            MsgBox("Error al desactivar el cliente: " & ex.Message)
         Finally
             Call Disconect()
         End Try

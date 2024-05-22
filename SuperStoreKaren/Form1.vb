@@ -6,30 +6,31 @@ Public Class Form1
     Public sqlread As SqlClient.SqlDataReader
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
         If (txtcontra.Text <> String.Empty And txtusuario.Text <> String.Empty) Then
             Dim dtusuario As New DataTable
             Dim fu As New Fusuario
             dtusuario = fu.validar_usuario(txtusuario.Text, txtcontra.Text)
 
             If (dtusuario.Rows.Count <> 0) Then
-
+                Dim userID As Integer = Convert.ToInt32(dtusuario.Rows(0)("id")) ' Asumiendo que la columna UserID contiene el ID del usuario
                 MessageBox.Show("Bienvenido usuario " + txtusuario.Text, "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Hide()
                 txtcontra.Clear()
                 txtusuario.Clear()
+
+                ' Guardar el ID del usuario en My.Settings
+                My.Settings.CurrentUserID = userID
+                My.Settings.Save()
                 Form2.Show()
             Else
                 MessageBox.Show("Error al entrar", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Else
-            MessageBox.Show("Eror al entrar", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error al entrar", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
-
-        MessageBox.Show("Complete todos los datos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-
     End Sub
+
+
     Private Sub Button1_ParentChanged(sender As Object, e As EventArgs) Handles Button1.ParentChanged
         Dim bth As Drawing2D.GraphicsPath = New Drawing2D.GraphicsPath()
         Dim r As Rectangle = Button1.ClientRectangle
@@ -58,6 +59,11 @@ Public Class Form1
     End Sub
 
     Private Sub contraseñatxt_TextChanged(sender As Object, e As EventArgs) Handles txtcontra.TextChanged
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Form2.Show()
 
     End Sub
 End Class

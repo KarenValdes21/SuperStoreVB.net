@@ -39,6 +39,13 @@ Partial Class Pedidos
         Me.CBMetodoEnvio = New System.Windows.Forms.ComboBox()
         Me.TxtDate2 = New System.Windows.Forms.DateTimePicker()
         Me.CbPedidoID = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -85,7 +92,7 @@ Partial Class Pedidos
         '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(693, 378)
+        Me.BtnEliminar.Location = New System.Drawing.Point(692, 388)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.BtnEliminar.TabIndex = 18
@@ -94,7 +101,7 @@ Partial Class Pedidos
         '
         'BtnAgregarPedido
         '
-        Me.BtnAgregarPedido.Location = New System.Drawing.Point(531, 378)
+        Me.BtnAgregarPedido.Location = New System.Drawing.Point(530, 388)
         Me.BtnAgregarPedido.Name = "BtnAgregarPedido"
         Me.BtnAgregarPedido.Size = New System.Drawing.Size(75, 23)
         Me.BtnAgregarPedido.TabIndex = 17
@@ -103,7 +110,7 @@ Partial Class Pedidos
         '
         'BtnEditarPedido
         '
-        Me.BtnEditarPedido.Location = New System.Drawing.Point(612, 378)
+        Me.BtnEditarPedido.Location = New System.Drawing.Point(611, 388)
         Me.BtnEditarPedido.Name = "BtnEditarPedido"
         Me.BtnEditarPedido.Size = New System.Drawing.Size(75, 23)
         Me.BtnEditarPedido.TabIndex = 16
@@ -112,16 +119,16 @@ Partial Class Pedidos
         '
         'TxtDate
         '
-        Me.TxtDate.Location = New System.Drawing.Point(545, 298)
+        Me.TxtDate.Location = New System.Drawing.Point(545, 312)
         Me.TxtDate.Name = "TxtDate"
-        Me.TxtDate.Size = New System.Drawing.Size(142, 20)
+        Me.TxtDate.Size = New System.Drawing.Size(164, 20)
         Me.TxtDate.TabIndex = 15
         '
         'TxtNombreProducto
         '
         Me.TxtNombreProducto.Location = New System.Drawing.Point(545, 152)
         Me.TxtNombreProducto.Name = "TxtNombreProducto"
-        Me.TxtNombreProducto.Size = New System.Drawing.Size(118, 20)
+        Me.TxtNombreProducto.Size = New System.Drawing.Size(164, 20)
         Me.TxtNombreProducto.TabIndex = 14
         '
         'Label3
@@ -158,16 +165,16 @@ Partial Class Pedidos
         'CBMetodoEnvio
         '
         Me.CBMetodoEnvio.FormattingEnabled = True
-        Me.CBMetodoEnvio.Location = New System.Drawing.Point(545, 271)
+        Me.CBMetodoEnvio.Location = New System.Drawing.Point(545, 272)
         Me.CBMetodoEnvio.Name = "CBMetodoEnvio"
         Me.CBMetodoEnvio.Size = New System.Drawing.Size(164, 21)
         Me.CBMetodoEnvio.TabIndex = 28
         '
         'TxtDate2
         '
-        Me.TxtDate2.Location = New System.Drawing.Point(545, 338)
+        Me.TxtDate2.Location = New System.Drawing.Point(545, 352)
         Me.TxtDate2.Name = "TxtDate2"
-        Me.TxtDate2.Size = New System.Drawing.Size(142, 20)
+        Me.TxtDate2.Size = New System.Drawing.Size(164, 20)
         Me.TxtDate2.TabIndex = 29
         '
         'CbPedidoID
@@ -175,14 +182,84 @@ Partial Class Pedidos
         Me.CbPedidoID.FormattingEnabled = True
         Me.CbPedidoID.Location = New System.Drawing.Point(542, 108)
         Me.CbPedidoID.Name = "CbPedidoID"
-        Me.CbPedidoID.Size = New System.Drawing.Size(121, 21)
+        Me.CbPedidoID.Size = New System.Drawing.Size(167, 21)
         Me.CbPedidoID.TabIndex = 30
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(539, 178)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(37, 13)
+        Me.Label4.TabIndex = 31
+        Me.Label4.Text = "Precio"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(627, 178)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 13)
+        Me.Label5.TabIndex = 32
+        Me.Label5.Text = "Cantidad"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(542, 217)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(59, 13)
+        Me.Label6.TabIndex = 33
+        Me.Label6.Text = "Descuento"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(634, 220)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(53, 13)
+        Me.Label7.TabIndex = 34
+        Me.Label7.Text = "Ganancia"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(540, 261)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(73, 13)
+        Me.Label8.TabIndex = 35
+        Me.Label8.Text = "Método Envio"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(540, 296)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(69, 13)
+        Me.Label9.TabIndex = 36
+        Me.Label9.Text = "Orden Fecha"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(542, 336)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(67, 13)
+        Me.Label10.TabIndex = 37
+        Me.Label10.Text = "Envio Fecha"
         '
         'Pedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CbPedidoID)
         Me.Controls.Add(Me.TxtDate2)
         Me.Controls.Add(Me.CBMetodoEnvio)
@@ -226,4 +303,11 @@ Partial Class Pedidos
     Friend WithEvents CBMetodoEnvio As ComboBox
     Friend WithEvents TxtDate2 As DateTimePicker
     Friend WithEvents CbPedidoID As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class

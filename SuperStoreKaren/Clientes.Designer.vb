@@ -27,12 +27,14 @@ Partial Class Clientes
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.BtnEditar = New System.Windows.Forms.Button()
+        Me.BtnEditarCliente = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.TxtDate = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.CbIdRegion = New System.Windows.Forms.ComboBox()
         Me.CbIdSegmento = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -79,14 +81,14 @@ Partial Class Clientes
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Cliente"
         '
-        'BtnEditar
+        'BtnEditarCliente
         '
-        Me.BtnEditar.Location = New System.Drawing.Point(685, 303)
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnEditar.TabIndex = 7
-        Me.BtnEditar.Text = "Editar"
-        Me.BtnEditar.UseVisualStyleBackColor = True
+        Me.BtnEditarCliente.Location = New System.Drawing.Point(685, 303)
+        Me.BtnEditarCliente.Name = "BtnEditarCliente"
+        Me.BtnEditarCliente.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEditarCliente.TabIndex = 7
+        Me.BtnEditarCliente.Text = "Editar"
+        Me.BtnEditarCliente.UseVisualStyleBackColor = True
         '
         'btnEliminar
         '
@@ -128,17 +130,37 @@ Partial Class Clientes
         Me.CbIdSegmento.Size = New System.Drawing.Size(121, 21)
         Me.CbIdSegmento.TabIndex = 12
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(622, 150)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(41, 13)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "Region"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(622, 188)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(55, 13)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "Segmento"
+        '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CbIdSegmento)
         Me.Controls.Add(Me.CbIdRegion)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TxtDate)
         Me.Controls.Add(Me.btnEliminar)
-        Me.Controls.Add(Me.BtnEditar)
+        Me.Controls.Add(Me.BtnEditarCliente)
         Me.Controls.Add(Me.label1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.TxtFiltro)
@@ -158,10 +180,12 @@ Partial Class Clientes
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents BtnEditar As Button
+    Friend WithEvents BtnEditarCliente As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents TxtDate As DateTimePicker
     Friend WithEvents Panel1 As Panel
     Friend WithEvents CbIdRegion As ComboBox
     Friend WithEvents CbIdSegmento As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class
